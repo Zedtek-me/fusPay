@@ -18,24 +18,24 @@ services:
       - db #depends on the database startup
 
   # production build
-  fusPayCrudProd:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      target: production
-    image: fus_pay_crud_production
-    container_name: fus_pay_crud_production
-    ports:
-      - 9000:9000
-      - 8000:8000
-    volumes:
-      - .:/project_dir
-      - ./.env:/project_dir/.env
-    restart: always
-    depends_on: 
-      - db #depends on the database startup
-    command:
-      - python manage.py runserver 0.0.0.0:9000
+  # fusPayCrudProd:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #     target: production
+  #   image: fus_pay_crud_production
+  #   container_name: fus_pay_crud_production
+  #   ports:
+  #     - 9000:9000
+  #     - 8000:8000
+  #   volumes:
+  #     - .:/project_dir
+  #     - ./.env:/project_dir/.env
+  #   restart: always
+  #   depends_on: 
+  #     - db #depends on the database startup
+  #   command:
+  #     - python manage.py runserver 0.0.0.0:9000
   db:
     image: postgres
     container_name: fus_pay_db

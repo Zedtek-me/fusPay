@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crud.apps.CruConfig',
-    'restframework'
+    'crud.apps.CrudConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -84,7 +84,7 @@ DATABASES = {
         'PORT': 5432,
         'USER': os.getenv("POSTGRES_USER"),
         'PASSWORD': os.getenv("POSTGRES_PASSWORD"),
-        'DATABASE': os.getenv("POSTGRES_DB")
+        'NAME': os.getenv("POSTGRES_DB")
     }
 }
 
