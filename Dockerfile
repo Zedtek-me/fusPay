@@ -1,4 +1,5 @@
 FROM python:3 AS staging
+WORKDIR /project_dir
 COPY . /project_dir
 COPY requirements.txt /project_dir/requirements.txt
 RUN pip install -r /project_dir/requirements.txt
