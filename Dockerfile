@@ -1,8 +1,7 @@
 FROM python:3 AS staging
-RUN apt-get update --fix-broken && apt-get -y install
 COPY . /project_dir
 COPY requirements.txt /project_dir/requirements.txt
-RUN pip install requirements.txt
+RUN pip install -r requirements.txt
 CMD [ "python", "-m", "manage", "runserver", "9000" ]
 
 
