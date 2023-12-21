@@ -25,7 +25,7 @@ class CrudView(APIView):
 
     def put(self, request):
         _data = request.data
-        serialized = BasicCrudSerializer(data=_data)
+        serialized = BasicCrudSerializer(data=_data, partial=True)
         serialized.is_valid(reaise_exception=True)
         serialized.save(creator=self.dummy_user)
         return Response(serialized.data, status=status.HTTP_202_ACCEPTED)
