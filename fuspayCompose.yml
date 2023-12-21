@@ -1,0 +1,24 @@
+services:
+  fusPayCrud:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: fus_pay_crud
+    container_name: fus_pay_crud
+    ports:
+      - 9000:9000
+      - 8000:8000
+    volumes:
+      - .:/project_dir
+      - ./.env:/project_dir/.env
+    restart: always
+    depends_on: db #depends on the database startup
+
+  db:
+    image: postgres
+    container_name: fus_pay_db
+    ports:
+      - 5432:5432
+    env_file: 
+      - ./.env
+    restart: always
