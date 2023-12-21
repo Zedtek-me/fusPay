@@ -1,4 +1,5 @@
 services:
+  # staging build
   fusPayCrud:
     build:
       context: .
@@ -15,6 +16,8 @@ services:
     restart: always
     depends_on: 
       - db #depends on the database startup
+
+  # production build
   fusPayCrudProd:
     build:
       context: .
