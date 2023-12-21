@@ -12,7 +12,8 @@ services:
       - .:/project_dir
       - ./.env:/project_dir/.env
     restart: always
-    depends_on: db #depends on the database startup
+    depends_on: 
+      - db #depends on the database startup
 
   db:
     image: postgres
