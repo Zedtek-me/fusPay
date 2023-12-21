@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 class CrudView(APIView):
     '''for basic cruds'''
-    dummy_user = User.objects.first()
+    # dummy_user = User.objects.first()
     def get(self, request):
         all_cruds = BasicCrud.objects.all()
         _serialized = BasicCrudSerializer(all_cruds)
